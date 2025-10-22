@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Messaging Demo",
+  "version": "1.0",
+  "description": "Shows popup ↔ background ↔ content message passing.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon48.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["scripting", "tabs"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
